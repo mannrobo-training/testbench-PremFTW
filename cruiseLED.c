@@ -15,17 +15,19 @@
 
 task main()
 {
-	int maxPotValue = 4000;
-	int maxMotValue = 127;
-	int currentPotValue = SensorValue[pot];
-	int motValue = 0;
 	while(true)
 	{
-		while(currentPotValue > 0)
+		if(motor[drive] < 45)
 		{
-			motValue = (maxMotValue/maxPotValue)*currentPotValue;
-			motor[drive] = motValue;
+			SensorValue[ledRed] = 1;
+		}
+		else if(45 <= motor[drive] <= 90)
+		{
+			SensorValue[ledYellow] = 1;
+		}
+		else if(motor[drive] >
+		{
+			SensorValue[ledGreen] = 1;
 		}
 	}
-
 }
