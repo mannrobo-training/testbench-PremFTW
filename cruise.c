@@ -15,17 +15,15 @@
 
 task main()
 {
-	int maxPotValue = 4000;
-	int maxMotValue = 127;
-	int currentPotValue = SensorValue[pot];
-	int motValue = 0;
+	float maxPotValue = 4000.0;
+	float maxMotValue = 127.0;
 	while(true)
 	{
-		while(currentPotValue > 0)
-		{
-			motValue = (maxMotValue/maxPotValue)*currentPotValue;
-			motor[drive] = motValue;
-		}
+
+		float motValue = 0.0;
+		float currentPotValue = SensorValue[pot];
+		motValue = (maxMotValue/maxPotValue)*currentPotValue;
+		motor[drive] = motValue;
 	}
 
 }

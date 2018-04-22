@@ -15,15 +15,15 @@
 
 task main()
 {
-	float maxPotValue = 4000.0;
+	float maxSonValue = 24.0;
 	float maxMotValue = 127.0;
 	while(true)
 	{
 		float motValue = 0.0;
 
-		float currentPotValue = SensorValue[pot];
+		float currentSonValue = SensorValue[ultrasonic];
 
-		motValue = (maxMotValue/maxPotValue)*currentPotValue;
+		motValue = (maxMotValue/maxSonValue)*currentSonValue;
 
 		motor[drive] = motValue;
 
